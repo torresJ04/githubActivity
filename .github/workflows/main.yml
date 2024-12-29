@@ -25,3 +25,9 @@ jobs:
           variavel = "Hello World!"
           print (variavel)
         shell: python
+  segundo-job:
+    name: "Instalando ambiente NodeJS"
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Verificar versão do NodeJS atual"
+        run: node --version
