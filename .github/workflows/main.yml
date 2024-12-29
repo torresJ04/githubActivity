@@ -13,8 +13,6 @@ jobs:
     runs-on: ubuntu-latest  ## Runner, ambiente onde as tarefas declaradas serão executadas.
     steps: ## Onde de fato são declaradas as actions
       - name: "Minha primeira action"
-        ## working-directory: rodar a action em um diretório específico
-        ## shell: declarar o tipo de terminal que irá executar a instrução
         run: echo "Hello World!"
       - name: "Segunda action"
         run: | ## Pipe é usado para executar diversas instruções na mesma action.
@@ -23,7 +21,7 @@ jobs:
       - name: "Script Python"
         run: |
           variavel = "Hello World!"
-          print (variavel)
+          print(variavel)
         shell: python
   segundo-job:
     name: "Instalando ambiente NodeJS"
@@ -32,9 +30,8 @@ jobs:
       - name: "Verificar versão do NodeJS atual"
         run: node --version
       - name: "Definindo versão 22.12.0 do NodeJS"
-      - uses: actions/setup-node@v4
+        uses: actions/setup-node@v4
         with:
           node-version: '22.12.0'
       - name: "Verificar versão do NodeJS atual"
         run: node --version
-
