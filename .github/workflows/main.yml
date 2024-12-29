@@ -13,8 +13,15 @@ jobs:
     runs-on: ubuntu-latest  ## Runner, ambiente onde as tarefas declaradas serão executadas.
     steps: ## Onde de fato são declaradas as actions
       - name: "Minha primeira action"
+        ## working-directory: rodar a action em um diretório específico
+        ## shell: declarar o tipo de terminal que irá executar a instrução
         run: echo "Hello World!"
       - name: "Segunda action"
         run: | ## Pipe é usado para executar diversas instruções na mesma action.
           echo "Você criou o seu primeiro Workflow!"
           echo "Parabéns!"
+      - name: "Script Python"
+        run: |
+          variavel = "Hello World!"
+          print (variavel)
+        shell: python
