@@ -1,18 +1,20 @@
 name: primeira-pipeline
-on: 
+
+on:
   ## Evento que gatilha a pipeline
   push: ## Um commit na branch
     branches: ["main"]
     
   workflow_dispatch: ## Permite executar a pipeline manualmente, pelo painel do Github.
+
 jobs:
-  primeiro-job:  
+  primeiro-job:
     name: "meu-primeiro-job"
     runs-on: ubuntu-latest  ## Runner, ambiente onde as tarefas declaradas serão executadas.
-    steps: ## Onde de ato são declradas as actions
+    steps: ## Onde de fato são declaradas as actions
       - name: "Minha primeira action"
         run: echo "Hello World!"
       - name: "Segunda action"
         run: | ## Pipe é usado para executar diversas instruções na mesma action.
-         echo: "Você criou o seu primeiro Workflow!"
-         echo "Parabéns!"
+          echo "Você criou o seu primeiro Workflow!"
+          echo "Parabéns!"
